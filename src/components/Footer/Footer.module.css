@@ -1,0 +1,17 @@
+.Footer {
+    grid-area: f;
+    background-color: aqua;
+    padding: 20px;
+}
+.item {
+    padding: 10px;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: blue !important;
+}

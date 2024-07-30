@@ -38,5 +38,4 @@ const MyPosts = (props) => {
         </div>
     )
 };
-debugger
 export default MyPosts

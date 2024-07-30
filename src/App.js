@@ -1,11 +1,10 @@
 import './App.css';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Profile from "./components/Content/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {updateNewPost} from "./redux/Store";
+import {Route, Routes} from "react-router-dom";
 import AllDialogsContainer from "./components/Dialogs/AllDialogsContainer";
+import UsersContainer from "./components/Content/Users/UsersContainer";
+import ProfileContainer from "./components/Content/ProfileContainer";
 
 function App(props) {
     return (
@@ -14,8 +13,10 @@ function App(props) {
             <Footer/>
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path='/content' element={<Profile />}/>
+                    <Route path='/profile' element={<ProfileContainer />}/>
+                    <Route path='/profile/:id' element={<ProfileContainer />}/>
                     <Route path='/dialogs' element={<AllDialogsContainer />}/>
+                    <Route path='/users' element={<UsersContainer />}/>
                 </Routes>
             </div>
         </div>

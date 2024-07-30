@@ -1,15 +1,23 @@
 import React from "react";
 import s from "./ProfileInfo.module.css"
+import Loader from "../../Loader";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if (!props.profile) {
+        return <Loader />
+    }
+
     return (
         <div>
             <div className={s.profileimage}>
                 <img
-                    src='https://www.funnyart.club/uploads/posts/2023-02/1675540529_www-funnyart-club-p-kot-mem-kartinki-18.jpg'/>
+                    src='https://fond-decran.com/wp-content/uploads/2021/06/jujutsu-kaisen-wallpaper-scaled.jpg'/>
             </div>
             <div className={s.descriptionBlock}>
-                Kussaiyn
+                <img src={props.profile.photos.large} />
+                <div>{props.profile.fullName}</div>
+                <div>{props.profile.lookingForAJobDescription}</div>
             </div>
         </div>
     )

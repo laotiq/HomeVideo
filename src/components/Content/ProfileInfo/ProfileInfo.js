@@ -7,7 +7,6 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Loader />
     }
-
     return (
         <div>
             <div className={s.profileimage}>

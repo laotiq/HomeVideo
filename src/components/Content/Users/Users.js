@@ -3,6 +3,8 @@ import styles from "./Users.module.css";
 import {NavLink} from "react-router-dom";
 import Loader from "../../Loader";
 import userPhoto from "../../../Assets/images/user.png";
+import axios from "axios";
+import {usersAPI} from "../../../api/api";
 
 
 let Users = (props) => {
@@ -31,10 +33,10 @@ let Users = (props) => {
                 {u.name}
             </span>
             <div className={styles.users}>
-                {u.followed ? <button onClick={() => {
-                        props.unfollow(u.id)
+                {u.followed ? <button disabled={props.isFollowingInProgress.includes(u.id)} onClick={() => {
+                    props.unfollow(u.id)
                     }}>UNFOLLOW</button> :
-                    <button onClick={() => {
+                    <button disabled={props.isFollowingInProgress.includes(u.id)} onClick={() => {
                         props.follow(u.id)
                     }}>FOLLOW</button>}
             </div>

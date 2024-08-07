@@ -5,11 +5,12 @@ import {Route, Routes} from "react-router-dom";
 import AllDialogsContainer from "./components/Dialogs/AllDialogsContainer";
 import UsersContainer from "./components/Content/Users/UsersContainer";
 import ProfileContainer from "./components/Content/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App(props) {
     return (
         <div className='app-wrapper'>
-            <Header/>
+            <HeaderContainer />
             <Footer/>
             <div className='app-wrapper-content'>
                 <Routes>
